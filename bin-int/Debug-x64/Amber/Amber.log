@@ -1,3 +1,15 @@
-﻿  Application.cpp
+﻿  Log.cpp
+F:\dev\Amber\Amber\src\Amber\Log.h(17,42): warning C4251: 'Amber::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Amber::Log'
+  (compiling source file 'src/Amber/Log.cpp')
+  F:\dev\Amber\Amber\vendor\spdlog\include\spdlog\details\registry.h(33,31):
+  see declaration of 'std::shared_ptr<spdlog::logger>'
+  
+F:\dev\Amber\Amber\src\Amber\Log.h(18,42): warning C4251: 'Amber::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Amber::Log'
+  (compiling source file 'src/Amber/Log.cpp')
+  F:\dev\Amber\Amber\vendor\spdlog\include\spdlog\details\registry.h(33,31):
+  see declaration of 'std::shared_ptr<spdlog::logger>'
+  
+  Application.cpp
+  Generating Code...
      Creating library F:\dev\Amber\bin\Debug-x64\Amber\Amber.lib and object F:\dev\Amber\bin\Debug-x64\Amber\Amber.exp
   Amber.vcxproj -> F:\dev\Amber\bin\Debug-x64\Amber\Amber.dll
