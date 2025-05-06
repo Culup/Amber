@@ -11,6 +11,11 @@ workspace "Amber"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+ IncludeDir = {}
+ IncludeDir["GLFW"] = "Amber/vendor/GLFW/include"
+
+ include "Amber/vendor/GLFW"
+
 project "Amber"
 	location "Amber"
 	kind "SharedLib"
@@ -18,6 +23,9 @@ project "Amber"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "abpch.h"
+	pchsource "Amber/src/abpch.cpp"
 
 	files
 	{
@@ -27,7 +35,16 @@ project "Amber"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	buildoptions {
@@ -36,7 +53,7 @@ project "Amber"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -47,14 +64,17 @@ project "Amber"
 
 	filter "configurations:Debug"
 		defines "AB_DEBUG"
+		staticruntime "Off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AB_RELEASE"
+		staticruntime "Off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AB_DIST"
+		staticruntime "Off"
 		optimize "On"
 
 project "Sandbox"
@@ -93,7 +113,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -103,12 +123,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AB_DEBUG"
+		staticruntime "Off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AB_RELEASE"
+		staticruntime "Off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AB_DIST"
+		staticruntime "Off"
 		optimize "On"

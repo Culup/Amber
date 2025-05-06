@@ -4,6 +4,15 @@
     <Filter Include="Amber">
       <UniqueIdentifier>{8CACD40C-F8C0-FCBD-C142-A01D2D16F9EE}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Amber\Events">
+      <UniqueIdentifier>{F042D110-DCA5-60B5-852B-996B716D2C38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Amber.h" />
@@ -16,9 +25,25 @@
     <ClInclude Include="src\Amber\EntryPoint.h">
       <Filter>Amber</Filter>
     </ClInclude>
+    <ClInclude Include="src\Amber\Events\ApplicationEvent.h">
+      <Filter>Amber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Amber\Events\Event.h">
+      <Filter>Amber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Amber\Events\KeyEvent.h">
+      <Filter>Amber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Amber\Events\MouseEvent.h">
+      <Filter>Amber\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Amber\Log.h">
       <Filter>Amber</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\abpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Amber\Application.cpp">
@@ -27,5 +52,9 @@
     <ClCompile Include="src\Amber\Log.cpp">
       <Filter>Amber</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\abpch.cpp" />
   </ItemGroup>
 </Project>
