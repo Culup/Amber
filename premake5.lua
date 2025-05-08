@@ -53,7 +53,7 @@ project "Amber"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
+		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -64,17 +64,17 @@ project "Amber"
 
 	filter "configurations:Debug"
 		defines "AB_DEBUG"
-		staticruntime "Off"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AB_RELEASE"
-		staticruntime "Off"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AB_DIST"
-		staticruntime "Off"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -113,7 +113,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
+		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -123,15 +123,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AB_DEBUG"
-		staticruntime "Off"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AB_RELEASE"
-		staticruntime "Off"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AB_DIST"
-		staticruntime "Off"
+		buildoptions "/MD"
 		optimize "On"
