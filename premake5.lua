@@ -11,10 +11,14 @@ workspace "Amber"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
- IncludeDir = {}
- IncludeDir["GLFW"] = "Amber/vendor/GLFW/include"
+IncludeDir = {}
+IncludeDir["GLFW"] = "Amber/vendor/GLFW/include"
+IncludeDir["Glad"] = "Amber/vendor/Glad/include"
+IncludeDir["ImGui"] = "Amber/vendor/imgui"
 
- include "Amber/vendor/GLFW"
+include "Amber/vendor/GLFW"
+include "Amber/vendor/Glad"
+include "Amber/vendor/imgui"
 
 project "Amber"
 	location "Amber"
@@ -37,14 +41,18 @@ project "Amber"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"opengl32.lib",
-		"dwmapi.lib"
+		"dwmapi.lib",
+		"ImGui",
+		"Glad"
 	}
 
 	buildoptions {
@@ -59,7 +67,8 @@ project "Amber"
 		defines
 		{
 			"AB_PLATFORM_WINDOWS",
-			"AB_BUILD_DLL"
+			"AB_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"

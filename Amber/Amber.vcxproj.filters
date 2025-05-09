@@ -13,6 +13,9 @@
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Amber\ImGui">
+      <UniqueIdentifier>{e095cbe7-a758-4036-b46f-23cc97d847c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Amber.h" />
@@ -53,6 +56,10 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\abpch.h" />
+    <ClInclude Include="src\Amber\ImGui\ImGuiLayer.h">
+      <Filter>Amber\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Amber\Application.cpp">
@@ -71,5 +78,9 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\abpch.cpp" />
+    <ClCompile Include="src\Amber\ImGui\ImGuiLayer.cpp">
+      <Filter>Amber\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

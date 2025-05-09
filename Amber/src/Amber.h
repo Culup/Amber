@@ -6,6 +6,8 @@
 #include "Amber/Layer.h"
 #include "Amber/Log.h"
 
+#include "Amber/ImGui/ImGuiLayer.h"
+
 // ---Entry Point-------------------
 #include "Amber/EntryPoint.h"
 // ---------------------------------
