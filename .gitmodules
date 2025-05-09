@@ -7,3 +7,6 @@
 [submodule "Amber/vendor/GLFW"]
 	path = Amber/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Amber/vendor/imgui"]
+	path = Amber/vendor/imgui
+	url = https://github.com/TheCherno/imgui
