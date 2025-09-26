@@ -6,3 +6,5 @@ A physics engine created for my Mechatronics and Robotics class. The goal is to 
 This engine can be used to create an interactive apllication or game with real or modified physics.
 
 This engine uses C++ and OpenGL while utilizing a dynamic linking library.
+
+Created by following a tutorial by TheCherno
